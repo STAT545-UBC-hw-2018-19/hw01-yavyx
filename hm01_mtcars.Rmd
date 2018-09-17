@@ -1,0 +1,41 @@
+---
+title: 'Homework 1: Exploring the `mtcars dataset'
+author: "Javier Castillo Arnemann"
+date: "September 17, 2018"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this file we will explore the built-in `mtcars` dataset. First, we will load the data:
+
+```{r}
+data(mtcars)
+```
+
+Then, we'll explore the dataset with the `summary`, `str` and `head` functions.
+```{r}
+summary(mtcars)
+str(mtcars)
+head(mtcars)
+```
+
+To continue exploring, we will sort the cars in the database according to their horsepower.
+```{r}
+mtcars[order(mtcars$hp),]
+```
+
+We can also check which cars have horsepower above 250 and below 100.
+```{r}
+mtcars[mtcars$hp>250,]
+mtcars[mtcars$hp<100,]
+```
+
+We could also find the standard deviation of the fuel economy (mpg) and horsepower.
+```{r}
+sd(mtcars$mpg)
+sd(mtcars$hp)
+```
+
